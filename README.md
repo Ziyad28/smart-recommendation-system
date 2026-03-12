@@ -1,4 +1,11 @@
-# Smart Recommendation System 
+# Smart Recommendation System API
+
+🚀 Live Demo:
+https://smart-recommendation-system-bfau.onrender.com
+
+📂 GitHub Repository:
+https://github.com/Ziyad28/smart-recommendation-system
+
 ## Preview
 
 ![Smart Recommendation](preview.png)
