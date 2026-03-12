@@ -2,66 +2,140 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Smart Recommendation</title>
 
     <style>
 
+        *{
+        box-sizing:border-box;
+        margin:0;
+        padding:0;
+        font-family: 'Segoe UI', sans-serif;
+        }
+
         body{
-        background:#0f0f0f;
-        font-family:Arial,sans-serif;
-        color:white;
+        background:linear-gradient(135deg,#0f0f0f,#1a1a2e,#16213e);
+        min-height:100vh;
         display:flex;
         justify-content:center;
-        margin:0;
+        align-items:center;
+        color:white;
         }
+
+        /* MAIN CARD */
 
         .container{
         width:420px;
-        margin-top:40px;
-        margin-bottom:40px;
+        padding:30px;
+        border-radius:20px;
+        background:rgba(255,255,255,0.05);
+        backdrop-filter:blur(12px);
+        box-shadow:0 0 25px rgba(0,0,0,0.5);
+        border:1px solid rgba(255,255,255,0.08);
+        animation:fadeIn 1s ease;
         }
 
-        select,input,button{
+        /* TITLE */
+
+        h2{
+        text-align:center;
+        margin-bottom:25px;
+        font-weight:600;
+        letter-spacing:1px;
+        background:linear-gradient(90deg,#ffb300,#ff5e00);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        }
+
+        /* INPUTS */
+
+        label{
+        font-size:13px;
+        opacity:0.8;
+        }
+
+        select,input{
         width:100%;
         padding:12px;
         margin-top:8px;
-        border-radius:8px;
+        margin-bottom:15px;
+        border-radius:10px;
         border:none;
-        font-size:15px;
+        background:#1e1e2f;
+        color:white;
+        font-size:14px;
+        transition:0.3s;
         }
+
+        select:focus,input:focus{
+        outline:none;
+        box-shadow:0 0 10px #ff9d00;
+        }
+
+        /* BUTTON */
 
         button{
-        background:#f7a600;
-        cursor:pointer;
+        width:100%;
+        padding:14px;
+        border:none;
+        border-radius:12px;
+        font-size:16px;
         font-weight:bold;
+        cursor:pointer;
+        background:linear-gradient(90deg,#ff8a00,#ff3d00);
+        color:white;
+        transition:0.3s;
         }
+
+        button:hover{
+        transform:scale(1.05);
+        box-shadow:0 0 15px #ff7a00;
+        }
+
+        /* RESULT CARD */
 
         .card{
-        background:#1c1c1c;
-        padding:15px;
-        margin-top:15px;
-        border-radius:10px;
+        background:rgba(255,255,255,0.05);
+        border-radius:15px;
+        padding:18px;
+        margin-top:18px;
+        backdrop-filter:blur(10px);
+        border:1px solid rgba(255,255,255,0.08);
+        transition:0.3s;
         }
+
+        .card:hover{
+        transform:translateY(-5px);
+        box-shadow:0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        /* MAP BUTTON */
 
         .mapBtn{
-        background:#f7a600;
-        border:none;
-        padding:10px;
         margin-top:10px;
-        border-radius:8px;
-        cursor:pointer;
-        font-weight:bold;
+        background:linear-gradient(90deg,#00c6ff,#0072ff);
+        font-size:14px;
         }
 
-        .star{font-size:22px}
+        .mapBtn:hover{
+        box-shadow:0 0 12px #00aaff;
+        }
 
-        .full{color:#FFD700}
+        /* STARS */
 
-        .empty{color:#555}
+        .star{
+        font-size:22px;
+        }
+
+        .full{
+        color:#FFD700;
+        }
+
+        .empty{
+        color:#555;
+        }
 
         .half{
         background:linear-gradient(90deg,#FFD700 50%,#555 50%);
@@ -69,31 +143,45 @@
         -webkit-text-fill-color:transparent;
         }
 
+        /* BADGES */
+
         .badge1{
         color:#FFD700;
         font-weight:bold;
+        margin-bottom:5px;
         }
 
         .badge2{
         color:#C0C0C0;
         font-weight:bold;
+        margin-bottom:5px;
+        }
+
+        /* ANIMATION */
+
+        @keyframes fadeIn{
+
+        from{
+        opacity:0;
+        transform:translateY(20px);
+        }
+
+        to{
+        opacity:1;
+        transform:translateY(0);
+        }
+
         }
 
     </style>
-
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <h2>Smart Recommendation System</h2>
-
-    <label>Age</label>
-    <input id="age" type="number" value="21">
-
-    <label>Budget</label>
-    <input id="budget" type="number" value="200">
+    <h2>Smart Recommendation</h2>
 
     <label>City</label>
     <select id="city"></select>
@@ -104,43 +192,33 @@
     <label>Category</label>
     <select id="category"></select>
 
-    <button onclick="recommend()">Recommend</button>
+    <button onclick="recommend()">Find Best Places</button>
 
     <div id="result"></div>
 
 </div>
 
+
 <script>
 
     const cities=[
+    "Hail",
     "Riyadh",
-    "Jeddah",
-    "Dammam",
-    "Abha",
-    "Tabuk",
-    "Hail"
+    "Dammam"
     ];
 
-
     const restaurantCategories=[
-
     "italian restaurant",
     "american restaurant",
     "japanese restaurant",
-    "mexican restaurant",
     "saudi restaurant",
-    "arabic restaurant"
-
+    "shawarma restaurant"
     ];
-
 
     const coffeeCategories=[
-
     "specialty coffee",
     "roastery coffee"
-
     ];
-
 
     function getStars(rating){
 
@@ -163,8 +241,6 @@
 
     }
 
-
-
     function fillCities(){
 
     const citySelect=document.getElementById("city");
@@ -172,7 +248,6 @@
     cities.forEach(city=>{
 
     const option=document.createElement("option");
-
     option.value=city;
     option.textContent=city;
 
@@ -182,8 +257,6 @@
 
     }
 
-
-
     function fillTypes(){
 
     const typeSelect=document.getElementById("type");
@@ -191,7 +264,6 @@
     ["restaurant","coffee"].forEach(t=>{
 
     const option=document.createElement("option");
-
     option.value=t;
     option.textContent=t;
 
@@ -201,14 +273,11 @@
 
     }
 
-
-
     function updateCategoryOptions(){
 
     const type=document.getElementById("type").value;
 
     const category=document.getElementById("category");
-
     category.innerHTML="";
 
     const list=type==="restaurant"?restaurantCategories:coffeeCategories;
@@ -226,33 +295,23 @@
 
     }
 
-
-
     function recommend(){
 
     const data={
 
-    age:parseInt(document.getElementById("age").value||0),
-
-    budget:parseInt(document.getElementById("budget").value||0),
-
+    age:0,
+    budget:0,
     city:document.getElementById("city").value,
-
     type:document.getElementById("type").value,
-
     category:document.getElementById("category").value,
-
     language:"en"
 
     };
 
-
     fetch("/recommend",{
 
     method:"POST",
-
     headers:{"Content-Type":"application/json"},
-
     body:JSON.stringify(data)
 
     })
@@ -267,8 +326,6 @@
     });
 
     }
-
-
 
     function showResults(data){
 
@@ -306,12 +363,12 @@
 
     <h3>${name}</h3>
 
-    <p style="font-size:20px">${stars} (${rating} • ${reviews} reviews)</p>
+    <p style="font-size:20px">
+    ${stars} (${rating} • ${reviews} reviews)
+    </p>
 
     <a href="${mapLink}" target="_blank">
-
     <button class="mapBtn">Open in Google Maps</button>
-
     </a>
 
     </div>
@@ -322,16 +379,12 @@
 
     }
 
-
-
     fillCities();
-
     fillTypes();
-
     updateCategoryOptions();
 
 </script>
 
 </body>
-
 </html>
+```

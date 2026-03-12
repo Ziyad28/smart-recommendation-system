@@ -23,396 +23,180 @@ public class RecommendationService {
         Map<String, List<Place>> data = new HashMap<>();
 
         // ================= HAIL =================
+
         data.put("Hail_specialty coffee", Arrays.asList(
-                new Place("HAO Coffee", 4.7, 1200),
-                new Place("WHB Coffee", 4.6, 950),
-                new Place("Sakura Coffee", 4.6, 870),
-                new Place("IV Coffee", 4.5, 760),
-                new Place("Naf Coffee", 4.5, 640)
+                new Place("NAF", 4.5, 1011),
+                new Place("Hao Coffee", 4.2, 276),
+                new Place("IV Cafe", 4.7, 1007),
+                new Place("Shed Coffee", 4.9, 894),
+                new Place("Flawless Coffee", 4.3, 760)
         ));
 
         data.put("Hail_roastery coffee", Arrays.asList(
-                new Place("HAO Coffee", 4.7, 1200),
-                new Place("WHB Coffee", 4.6, 950),
-                new Place("Sakura Coffee", 4.6, 870),
-                new Place("IV Coffee", 4.5, 760),
-                new Place("Naf Coffee", 4.5, 640)
+                new Place("Geisha Roastery", 4.3, 1590),
+                new Place("Camel Step", 4.3, 604),               new Place("Alton Coffee", 4.4, 1079),
+                new Place("Peacock Coffee", 4.4, 1593),
+                new Place("Al Andalus Roastery", 4.1, 210)
         ));
 
         data.put("Hail_italian restaurant", Arrays.asList(
-                new Place("Roca Roco", 4.6, 900),
-                new Place("Pizza Roma", 4.5, 700),
-                new Place("La Casa Italian", 4.3, 400),
-                new Place("Italian Taste", 4.2, 300),
-                new Place("Roma Kitchen", 4.1, 200)
+                new Place("Roca Roco", 4.5, 1280),
+                new Place("Loft Restaurant", 4.8, 9654),
+                new Place("Crops", 4.8, 499),
+                new Place("Picual", 4.4, 621),
+                new Place("Opalo Pizzeria", 4.0, 566)
         ));
 
         data.put("Hail_american restaurant", Arrays.asList(
-                new Place("Burgerizzr Hail", 4.5, 740),
-                new Place("Route Burger", 4.4, 610),
-                new Place("Fire Grill Burger", 4.3, 480),
-                new Place("Burger Castle", 4.2, 360),
-                new Place("Hamburgini Hail", 4.1, 290)
+                new Place("Flux", 4.2, 1651),
+                new Place("WBJ Burger", 4.7, 390),
+                new Place("Point Burger", 4.3, 3915),
+                new Place("Smoke Ring", 4.1, 518),
+                new Place("Reef Burger", 4.3, 2124)
         ));
 
         data.put("Hail_japanese restaurant", Arrays.asList(
-                new Place("Sushi Yoshi", 4.4, 300),
-                new Place("Tokyo House", 4.3, 260),
-                new Place("Sakura Sushi", 4.2, 210),
-                new Place("Osaka Japanese", 4.1, 180),
-                new Place("Nippon Kitchen", 4.0, 120)
-        ));
-
-        data.put("Hail_mexican restaurant", Arrays.asList(
-                new Place("Taco Fiesta", 4.4, 280),
-                new Place("Amigos Mexican Grill", 4.3, 230),
-                new Place("Burrito House", 4.2, 200),
-                new Place("Nacho Spot", 4.1, 150),
-                new Place("Casa Mexicana", 4.0, 100)
+                new Place("Kim Wok", 4.1, 228),
+                new Place("Noodles Factory", 4.1, 212),
+                new Place("Secret Sushi", 4.4, 356),
+                new Place("Ramen Yummy", 4.9, 75),
+                new Place("Myss Sushi", 4.2, 25)
         ));
 
         data.put("Hail_saudi restaurant", Arrays.asList(
-                new Place("Kabsa House", 4.6, 830),
-                new Place("Jareesh House", 4.4, 520),
-                new Place("Saudi Taste", 4.3, 430),
-                new Place("Najd Food", 4.2, 350),
-                new Place("Heritage Saudi Restaurant", 4.1, 300)
+                new Place("Nakhat Dairatna", 4.2, 2120),
+                new Place("Al Wadi Al Mubarak Kitchen", 4.4, 5331),
+                new Place("Al Qasrain Kitchens", 4.6, 2217),
+                new Place("Zawaya Barzan", 4.5, 550),
+                new Place("Duyuf Al Asalah", 4.1, 4791)
         ));
 
-        data.put("Hail_arabic restaurant", Arrays.asList(
-                new Place("Al Romansiah", 4.6, 1100),
-                new Place("Shawaya House", 4.5, 900),
-                new Place("Bab Al Yemen", 4.4, 650),
-                new Place("Layali Al Arab", 4.3, 520),
-                new Place("Arabian Majlis", 4.2, 430)
+        data.put("Hail_shawarma restaurant", Arrays.asList(
+                new Place("Shawrmanatak", 4.8, 1683),
+                new Place("Ninety Flavor", 4.3, 201),
+                new Place("Lasat Felfela", 4.4, 1286),
+                new Place("Shawarma Samel", 4.5, 143),
+                new Place("Shawarma Moalem", 4.4, 614)
         ));
 
         // ================= RIYADH =================
+
         data.put("Riyadh_specialty coffee", Arrays.asList(
-                new Place("Brew92", 4.7, 3500),
-                new Place("Camel Step Coffee", 4.6, 2900),
-                new Place("Sulalat Coffee", 4.5, 2400),
-                new Place("Elixir Bunn", 4.5, 1800),
-                new Place("Ashjar Cafe", 4.4, 1500)
+                new Place("Brew92", 4.0, 3303),
+                new Place("Quaint Cafe", 4.1, 3214),
+                new Place("Kultura Coffee", 4.4, 3838),
+                new Place("SCRMY", 4.5, 2027),
+                new Place("DaNona Al Nakheel", 4.1, 1157)
         ));
 
         data.put("Riyadh_roastery coffee", Arrays.asList(
-                new Place("Roasting House", 4.7, 2100),
-                new Place("Black Knight Roastery", 4.6, 1700),
-                new Place("Bean Roastery", 4.5, 1400),
-                new Place("Coffee Roasters Riyadh", 4.4, 1200),
-                new Place("Roast Master", 4.3, 950)
-        ));
-
-        data.put("Riyadh_italian restaurant", Arrays.asList(
-                new Place("Il Baretto", 4.7, 3200),
-                new Place("Piatto", 4.6, 2800),
-                new Place("Cipriani", 4.6, 2400),
-                new Place("Mamo Michelangelo", 4.5, 2000),
-                new Place("Azzurro", 4.4, 1500)
+                new Place("Sulalat Coffee", 4.3, 5690),
+                new Place("Origin Roastery", 3.7, 1735),
+                new Place("Hjeen Roastery", 4.5, 3208),
+                new Place("Bayt Al Tahmees", 4.4, 2049),
+                new Place("Breehant Roastery", 4.5, 7678)
         ));
 
         data.put("Riyadh_american restaurant", Arrays.asList(
-                new Place("Section-B", 4.6, 2600),
-                new Place("Five Guys", 4.5, 2300),
-                new Place("Shake Shack", 4.5, 2100),
-                new Place("Johnny Rockets", 4.4, 1800),
-                new Place("TGI Fridays", 4.3, 1500)
+                new Place("Chefz Burger", 4.4, 12607),
+                new Place("Steak House", 4.3, 14764),
+                new Place("Prime Cut", 4.6, 11294),
+                new Place("California Burger", 4.6, 22800),
+                new Place("7 Adlaa", 4.3, 7847)
+        ));
+
+        data.put("Riyadh_italian restaurant", Arrays.asList(
+                new Place("Mamo Michelangelo", 3.9, 6136),
+                new Place("Blanca", 4.3, 9702),
+                new Place("Zuma", 4.6, 2834),
+                new Place("Signor Sassi", 4.2, 6065),
+                new Place("San Marzano", 4.6, 1699)
         ));
 
         data.put("Riyadh_japanese restaurant", Arrays.asList(
-                new Place("Nozomi", 4.7, 2100),
-                new Place("Myazu", 4.6, 1900),
-                new Place("Tokyo", 4.5, 1600),
-                new Place("Benihana", 4.4, 1300),
-                new Place("Sushi Yoshi Riyadh", 4.3, 1100)
-        ));
-
-        data.put("Riyadh_mexican restaurant", Arrays.asList(
-                new Place("La Mesa", 4.5, 1400),
-                new Place("Burro Blanco", 4.5, 1300),
-                new Place("Taco Bell", 4.3, 1100),
-                new Place("Maria Bonita", 4.2, 900),
-                new Place("Muchachas", 4.1, 750)
+                new Place("Kami", 4.9, 5712),
+                new Place("Okku", 4.2, 1907),
+                new Place("Shiro", 4.8, 8016),
+                new Place("Sushi Yoshi", 4.0, 1869),
+                new Place("Myazu", 4.4, 10018)
         ));
 
         data.put("Riyadh_saudi restaurant", Arrays.asList(
-                new Place("Najd Village", 4.7, 4000),
-                new Place("Takya", 4.6, 3200),
-                new Place("Saudi Kitchen", 4.5, 2600),
-                new Place("Kabsa Time", 4.3, 2100),
-                new Place("Heritage Najdi", 4.2, 1800)
+                new Place("Hataba", 4.4, 9575),
+                new Place("Shawayat Al Khaleej", 4.2, 8770),
+                new Place("Najd Village", 4.1, 11495),
+                new Place("Aseeb", 4.5, 16495),
+                new Place("Toufaria", 4.3, 6594)
         ));
 
-        data.put("Riyadh_arabic restaurant", Arrays.asList(
-                new Place("Al Romansiah", 4.6, 5000),
-                new Place("Shawaya House", 4.5, 4200),
-                new Place("Bab Tuma", 4.4, 3100),
-                new Place("Layali Beirut", 4.3, 2500),
-                new Place("Arabesque", 4.2, 2000)
-        ));
-
-        // ================= JEDDAH =================
-        data.put("Jeddah_specialty coffee", Arrays.asList(
-                new Place("Brew92 Jeddah", 4.7, 2600),
-                new Place("Camel Step Jeddah", 4.6, 2200),
-                new Place("Medd Cafe", 4.6, 1800),
-                new Place("12 Cups", 4.5, 1500),
-                new Place("Half Million", 4.4, 1300)
-        ));
-
-        data.put("Jeddah_roastery coffee", Arrays.asList(
-                new Place("Roast Maestro", 4.6, 1200),
-                new Place("Jeddah Roastery", 4.5, 980),
-                new Place("Bean Roasters", 4.4, 860),
-                new Place("Coffee Lab Roastery", 4.3, 720),
-                new Place("Roast Corner", 4.2, 600)
-        ));
-
-        data.put("Jeddah_italian restaurant", Arrays.asList(
-                new Place("Piatto Jeddah", 4.6, 2200),
-                new Place("Biella", 4.5, 1800),
-                new Place("Il Gabbiano", 4.5, 1500),
-                new Place("Cipriani Jeddah", 4.4, 1300),
-                new Place("Sapori di Roma", 4.3, 1000)
-        ));
-
-        data.put("Jeddah_american restaurant", Arrays.asList(
-                new Place("Section-B Jeddah", 4.6, 1900),
-                new Place("Five Guys Jeddah", 4.5, 1700),
-                new Place("Shake Shack Jeddah", 4.4, 1500),
-                new Place("TGI Fridays Jeddah", 4.3, 1300),
-                new Place("Johnny Rockets Jeddah", 4.2, 1100)
-        ));
-
-        data.put("Jeddah_japanese restaurant", Arrays.asList(
-                new Place("Sakura Japanese", 4.6, 1500),
-                new Place("Benihana Jeddah", 4.5, 1300),
-                new Place("Nozomi Jeddah", 4.4, 1100),
-                new Place("Sushi Library", 4.3, 900),
-                new Place("Tokyo House Jeddah", 4.2, 800)
-        ));
-
-        data.put("Jeddah_mexican restaurant", Arrays.asList(
-                new Place("La Mesa Jeddah", 4.5, 1200),
-                new Place("Taco House", 4.4, 1000),
-                new Place("Burrito Loco", 4.3, 850),
-                new Place("Casa Mexicana Jeddah", 4.2, 700),
-                new Place("Mucho Mexico", 4.1, 600)
-        ));
-
-        data.put("Jeddah_saudi restaurant", Arrays.asList(
-                new Place("Saudi Taste Jeddah", 4.5, 1300),
-                new Place("Kabsa House Jeddah", 4.4, 1100),
-                new Place("Traditional Saudi Food", 4.3, 900),
-                new Place("Heritage Saudi Kitchen", 4.2, 750),
-                new Place("Najd Village Jeddah", 4.1, 650)
-        ));
-
-        data.put("Jeddah_arabic restaurant", Arrays.asList(
-                new Place("Bab Al Yemen", 4.6, 1700),
-                new Place("Al Romansiah Jeddah", 4.5, 1500),
-                new Place("Layali Al Arab", 4.4, 1200),
-                new Place("Shawaya House Jeddah", 4.3, 1000),
-                new Place("Arabian Nights Restaurant", 4.2, 850)
+        data.put("Riyadh_shawarma restaurant", Arrays.asList(
+                new Place("Mama Noura", 4.2, 31122),
+                new Place("Nawar Al Lulu", 4.1, 3992),
+                new Place("Bayt Al Shawarma", 4.4, 38294),
+                new Place("Shawarma Rayeg", 4.1, 3209),
+                new Place("Shawarma Ayed", 4.4, 5163)
         ));
 
         // ================= DAMMAM =================
+
         data.put("Dammam_specialty coffee", Arrays.asList(
-                new Place("Camel Step Dammam", 4.6, 1600),
-                new Place("Brew Crew", 4.5, 1300),
-                new Place("Dose Cafe", 4.4, 1100),
-                new Place("The Barn", 4.3, 900),
-                new Place("Cup & Bean", 4.2, 750)
+                new Place("Juz Coffee", 4.8, 2060),
+                new Place("Sant Coffee", 4.8, 1649),
+                new Place("Opinion Coffee", 4.8, 1275),
+                new Place("Namq Coffee", 4.4, 6369),
+                new Place("Llama Cafe", 4.5, 3632)
         ));
 
         data.put("Dammam_roastery coffee", Arrays.asList(
-                new Place("Dammam Roastery", 4.6, 1000),
-                new Place("Roast Nation", 4.5, 850),
-                new Place("Bean District", 4.4, 700),
-                new Place("Roastery House", 4.3, 580),
-                new Place("Coffee Bean Roasters", 4.2, 470)
-        ));
-
-        data.put("Dammam_italian restaurant", Arrays.asList(
-                new Place("Piatto Dammam", 4.5, 1500),
-                new Place("Biella Dammam", 4.4, 1200),
-                new Place("Roma Way", 4.3, 980),
-                new Place("Pasta Vista", 4.2, 760),
-                new Place("Italiano", 4.1, 620)
+                new Place("Soil Roasters", 4.5, 1707),
+                new Place("Andy's Coffee Roasters", 4.6, 2937),
+                new Place("Slope Coffee", 4.7, 603),
+                new Place("Core Coffee & Roastery", 4.4, 658),
+                new Place("Sharq Coffee", 4.5, 8194)
         ));
 
         data.put("Dammam_american restaurant", Arrays.asList(
-                new Place("Five Guys Dammam", 4.5, 1400),
-                new Place("Shake Shack Dammam", 4.4, 1200),
-                new Place("Section-B Dammam", 4.3, 1000),
-                new Place("Steak House", 4.2, 820),
-                new Place("Johnny Rockets Dammam", 4.1, 700)
+                new Place("Wings", 4.5, 1136),
+                new Place("Half Pound Burger", 4.7, 2968),
+                new Place("Burger Site", 4.4, 8524),
+                new Place("The Peak", 4.5, 8533),
+                new Place("Regal Burger", 4.6, 9366)
+        ));
+
+        data.put("Dammam_italian restaurant", Arrays.asList(
+                new Place("Brava Italian", 4.7, 2051),
+                new Place("Kart Restaurant", 4.6, 4096),
+                new Place("Fatto", 4.7, 6272),
+                new Place("Belivento", 4.7, 4556),
+                new Place("Lievito", 4.6, 2411)
         ));
 
         data.put("Dammam_japanese restaurant", Arrays.asList(
-                new Place("Sushi Box", 4.5, 1100),
-                new Place("Tokyo Dammam", 4.4, 950),
-                new Place("Sakura Sushi Dammam", 4.3, 800),
-                new Place("Nippon Taste", 4.2, 650),
-                new Place("Osaka Grill", 4.1, 520)
-        ));
-
-        data.put("Dammam_mexican restaurant", Arrays.asList(
-                new Place("Taco Spot", 4.4, 900),
-                new Place("Casa Burrito", 4.3, 780),
-                new Place("Mexican House", 4.2, 650),
-                new Place("Nacho Time", 4.1, 520),
-                new Place("Fiesta Grill", 4.0, 430)
+                new Place("Sushi Library", 4.5, 3242),
+                new Place("Unagi", 4.5, 1318),
+                new Place("Masami Sushi", 4.0, 1217),
+                new Place("Maki House", 4.6, 1116),
+                new Place("Kaiseki Sushi & Noodles", 4.7, 1932)
         ));
 
         data.put("Dammam_saudi restaurant", Arrays.asList(
-                new Place("Najd Village Dammam", 4.5, 1400),
-                new Place("Kabsa Time Dammam", 4.4, 1150),
-                new Place("Saudi Kitchen Dammam", 4.3, 980),
-                new Place("Jareesh House", 4.2, 760),
-                new Place("Traditional Saudi Table", 4.1, 630)
+                new Place("Shajarat Al Durr", 4.7, 26408),
+                new Place("Al Mathaq Al Othmani", 4.6, 15704),
+                new Place("Zad Al Sultan", 4.2, 7569),
+                new Place("Qasr Al Mathbi", 4.1, 4956),
+                new Place("Al Mudhyaf", 4.3, 2806)
         ));
 
-        data.put("Dammam_arabic restaurant", Arrays.asList(
-                new Place("Al Romansiah Dammam", 4.5, 1800),
-                new Place("Shawaya House Dammam", 4.4, 1500),
-                new Place("Layali Beirut Dammam", 4.3, 1200),
-                new Place("Bab Al Hara", 4.2, 960),
-                new Place("Arabian Taste", 4.1, 800)
-        ));
-
-        // ================= ABHA =================
-        data.put("Abha_specialty coffee", Arrays.asList(
-                new Place("Camel Step Abha", 4.6, 1400),
-                new Place("Dose Cafe Abha", 4.5, 1200),
-                new Place("Coffee Waves", 4.4, 950),
-                new Place("Brew Lab", 4.3, 760),
-                new Place("Dr.Cafe Abha", 4.2, 620)
-        ));
-
-        data.put("Abha_roastery coffee", Arrays.asList(
-                new Place("Abha Roastery", 4.6, 900),
-                new Place("Roast Hill", 4.5, 760),
-                new Place("Bean Peak", 4.4, 640),
-                new Place("Roastery Lab", 4.3, 520),
-                new Place("Coffee Roast Abha", 4.2, 430)
-        ));
-
-        data.put("Abha_italian restaurant", Arrays.asList(
-                new Place("Pasta House Abha", 4.5, 1000),
-                new Place("Roma Abha", 4.4, 820),
-                new Place("Italian Corner", 4.3, 690),
-                new Place("Bella Italia", 4.2, 560),
-                new Place("Piatto Abha", 4.1, 450)
-        ));
-
-        data.put("Abha_american restaurant", Arrays.asList(
-                new Place("Burger Boutique Abha", 4.5, 1200),
-                new Place("Five Guys Abha", 4.4, 950),
-                new Place("Steak House Abha", 4.3, 810),
-                new Place("Route 66 Burger", 4.2, 640),
-                new Place("American Grill", 4.1, 500)
-        ));
-
-        data.put("Abha_japanese restaurant", Arrays.asList(
-                new Place("Sushi Peak", 4.4, 760),
-                new Place("Tokyo Abha", 4.3, 620),
-                new Place("Sakura Abha", 4.2, 500),
-                new Place("Nippon House", 4.1, 410),
-                new Place("Japan Kitchen", 4.0, 320)
-        ));
-
-        data.put("Abha_mexican restaurant", Arrays.asList(
-                new Place("Taco Hills", 4.4, 700),
-                new Place("Fiesta Abha", 4.3, 590),
-                new Place("Mexican Grill Abha", 4.2, 480),
-                new Place("Burrito Box", 4.1, 390),
-                new Place("Casa Abha", 4.0, 300)
-        ));
-
-        data.put("Abha_saudi restaurant", Arrays.asList(
-                new Place("Saudi Taste Abha", 4.5, 1200),
-                new Place("Kabsa House Abha", 4.4, 980),
-                new Place("Najdi Food Abha", 4.3, 810),
-                new Place("Traditional Saudi Restaurant", 4.2, 650),
-                new Place("Saudi Heritage Abha", 4.1, 520)
-        ));
-
-        data.put("Abha_arabic restaurant", Arrays.asList(
-                new Place("Arabian Majlis Abha", 4.5, 1300),
-                new Place("Layali Al Arab Abha", 4.4, 1050),
-                new Place("Al Romansiah Abha", 4.3, 900),
-                new Place("Shawaya House Abha", 4.2, 720),
-                new Place("Bab Al Arab", 4.1, 600)
-        ));
-
-        // ================= TABUK =================
-        data.put("Tabuk_specialty coffee", Arrays.asList(
-                new Place("Camel Step Tabuk", 4.6, 1300),
-                new Place("Barn's", 4.5, 1100),
-                new Place("Bean Spot", 4.4, 880),
-                new Place("Cup Roasters", 4.3, 700),
-                new Place("Coffee Route", 4.2, 560)
-        ));
-
-        data.put("Tabuk_roastery coffee", Arrays.asList(
-                new Place("Tabuk Roastery", 4.6, 850),
-                new Place("Roast Factory", 4.5, 720),
-                new Place("Bean Master", 4.4, 610),
-                new Place("Roastery District", 4.3, 500),
-                new Place("Coffee Lab Tabuk", 4.2, 410)
-        ));
-
-        data.put("Tabuk_italian restaurant", Arrays.asList(
-                new Place("Piatto Tabuk", 4.5, 1200),
-                new Place("Roma Pasta", 4.4, 960),
-                new Place("Italian Taste Tabuk", 4.3, 780),
-                new Place("Bella Roma", 4.2, 620),
-                new Place("Pasta Villa", 4.1, 500)
-        ));
-
-        data.put("Tabuk_american restaurant", Arrays.asList(
-                new Place("Burgerizzr Tabuk", 4.5, 1300),
-                new Place("Five Guys Tabuk", 4.4, 1050),
-                new Place("American Burger House", 4.3, 860),
-                new Place("Steak Grill Tabuk", 4.2, 700),
-                new Place("Route Burger Tabuk", 4.1, 560)
-        ));
-
-        data.put("Tabuk_japanese restaurant", Arrays.asList(
-                new Place("Sushi Tabuk", 4.4, 740),
-                new Place("Tokyo Taste", 4.3, 620),
-                new Place("Sakura House Tabuk", 4.2, 510),
-                new Place("Japan Table", 4.1, 420),
-                new Place("Nippon Sushi", 4.0, 330)
-        ));
-
-        data.put("Tabuk_mexican restaurant", Arrays.asList(
-                new Place("Taco Tabuk", 4.4, 690),
-                new Place("Fiesta Mexicana", 4.3, 580),
-                new Place("Burrito Tabuk", 4.2, 470),
-                new Place("Casa Taco", 4.1, 380),
-                new Place("Mexican Bite", 4.0, 300)
-        ));
-
-        data.put("Tabuk_saudi restaurant", Arrays.asList(
-                new Place("Saudi House Tabuk", 4.5, 1250),
-                new Place("Kabsa Village", 4.4, 1020),
-                new Place("Traditional Saudi Food Tabuk", 4.3, 840),
-                new Place("Najdi Flavors", 4.2, 680),
-                new Place("Saudi Majlis", 4.1, 550)
-        ));
-
-        data.put("Tabuk_arabic restaurant", Arrays.asList(
-                new Place("Arabian Table Tabuk", 4.5, 1350),
-                new Place("Layali Tabuk", 4.4, 1120),
-                new Place("Shawaya House Tabuk", 4.3, 920),
-                new Place("Bab Al Sham", 4.2, 760),
-                new Place("Arab Taste Tabuk", 4.1, 620)
+        data.put("Dammam_shawarma restaurant", Arrays.asList(
+                new Place("Shawarma Hleel", 4.1, 5713),
+                new Place("Rayeg Restaurant", 4.1, 6726),
+                new Place("Shawarma Hazwra", 4.6, 3096),
+                new Place("Shrimpy", 4.0, 6763),
+                new Place("Shawarmer", 4.0, 3310)
         ));
 
         String key = city + "_" + category;
+
         List<Place> places = data.getOrDefault(key, new ArrayList<>());
 
         places.sort((a, b) -> {
@@ -422,6 +206,7 @@ public class RecommendationService {
         });
 
         List<Map<String, Object>> resultPlaces = new ArrayList<>();
+
         for (Place p : places) {
             Map<String, Object> item = new HashMap<>();
             item.put("name", p.name);
@@ -432,6 +217,7 @@ public class RecommendationService {
 
         Map<String, Object> result = new HashMap<>();
         result.put("places", resultPlaces);
+
         return result;
     }
 }
