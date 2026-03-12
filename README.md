@@ -1,5 +1,7 @@
 # Smart Recommendation System 
+## Preview
 
+![Smart Recommendation](preview.png)
 AI-based recommendation system that suggests the best **restaurants** and **coffee shops** based on ratings and reviews.
 
 ## 🚀 Features
