@@ -1,4 +1,4 @@
-# Smart Recommendation System API
+# Smart Recommendation System
 
 🚀 Live Demo:
 https://smart-recommendation-system-bfau.onrender.com
@@ -8,7 +8,12 @@ https://github.com/Ziyad28/smart-recommendation-system
 
 ## Preview
 
-![Smart Recommendation](preview.png)
+![Smart Recommendation](preview2.png)
+
+Modern web interface with smart restaurant and coffee recommendations.
+
+---
+
 AI-based recommendation system that suggests the best **restaurants** and **coffee shops** based on ratings and reviews.
 
 ## 🚀 Features
@@ -16,6 +21,7 @@ AI-based recommendation system that suggests the best **restaurants** and **coff
 * Restaurant recommendations
 * Coffee shop recommendations
 * Rating-based ranking system
+* Top 3 recommendations (Best Match, Second, Third)
 * Google Maps integration
 * REST API built with Spring Boot
 
@@ -28,65 +34,4 @@ AI-based recommendation system that suggests the best **restaurants** and **coff
 
 ## 📊 How It Works
 
-The system analyzes ratings and number of reviews to calculate a score and recommend the best places in each category.
-
 Score formula:
-
-```
-score = rating + min(reviews / 1000, 1)
-```
-
-This helps balance **rating quality** with **review popularity**.
-
-## 🌍 Example Categories
-
-* Italian Restaurants
-* American Restaurants
-* Japanese Restaurants
-* Saudi Restaurants
-* Shawarma Restaurants
-* Specialty Coffee
-* Coffee Roasteries
-
-## 📍 Cities Supported
-
-* Hail
-* Riyadh
-* Dammam
-
-## 🔗 API Example
-
-Example request:
-
-```
-POST /recommend
-```
-
-Example body:
-
-```json
-{
- "city": "Riyadh",
- "type": "coffee",
- "category": "specialty coffee"
-}
-```
-
-Example response:
-
-```json
-{
- "places": [
-   {
-     "name": "Brew92",
-     "rating": 4.0,
-     "reviews": 3303
-   }
- ]
-}
-```
-
-## 👨‍💻 Author
-
-Ziyad Alghadhban
-Software Engineering Student
