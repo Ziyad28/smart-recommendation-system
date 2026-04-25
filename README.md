@@ -51,7 +51,7 @@ The system calculates a score for each place using:
 
 ```java
 score = rating + Math.min(reviews / 1000.0, 1);
-
+```
 This approach balances between:
 
 ⭐ High rating (quality)
