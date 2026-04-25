@@ -1,187 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Recommendation</title>
 
     <style>
-
         *{
-        box-sizing:border-box;
-        margin:0;
-        padding:0;
-        font-family: 'Segoe UI', sans-serif;
+          box-sizing:border-box;
+          margin:0;
+          padding:0;
+          font-family:Arial;
         }
 
         body{
-        background:linear-gradient(135deg,#0f0f0f,#1a1a2e,#16213e);
-        min-height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        color:white;
+          background:#f5f5f5;
+          min-height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          padding:40px;
         }
-
-        /* MAIN CARD */
 
         .container{
-        width:420px;
-        padding:30px;
-        border-radius:20px;
-        background:rgba(255,255,255,0.05);
-        backdrop-filter:blur(12px);
-        box-shadow:0 0 25px rgba(0,0,0,0.5);
-        border:1px solid rgba(255,255,255,0.08);
-        animation:fadeIn 1s ease;
+          width:900px;
+          background:white;
+          padding:30px;
+          border-radius:20px;
+          box-shadow:0 10px 30px gray;
         }
-
-        /* TITLE */
 
         h2{
-        text-align:center;
-        margin-bottom:25px;
-        font-weight:600;
-        letter-spacing:1px;
-        background:linear-gradient(90deg,#ffb300,#ff5e00);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
+          text-align:center;
+          margin-bottom:25px;
         }
-
-        /* INPUTS */
 
         label{
-        font-size:13px;
-        opacity:0.8;
+          font-weight:bold;
+          display:block;
+          margin-top:10px;
         }
 
-        select,input{
-        width:100%;
-        padding:12px;
-        margin-top:8px;
-        margin-bottom:15px;
-        border-radius:10px;
-        border:none;
-        background:#1e1e2f;
-        color:white;
-        font-size:14px;
-        transition:0.3s;
+        select{
+          width:100%;
+          padding:12px;
+          margin:10px 0 15px;
+          border-radius:10px;
+          border:1px solid gray;
         }
-
-        select:focus,input:focus{
-        outline:none;
-        box-shadow:0 0 10px #ff9d00;
-        }
-
-        /* BUTTON */
 
         button{
-        width:100%;
-        padding:14px;
-        border:none;
-        border-radius:12px;
-        font-size:16px;
-        font-weight:bold;
-        cursor:pointer;
-        background:linear-gradient(90deg,#ff8a00,#ff3d00);
-        color:white;
-        transition:0.3s;
+          width:100%;
+          padding:14px;
+          border:none;
+          border-radius:12px;
+          background:orange;
+          color:white;
+          font-weight:bold;
+          cursor:pointer;
         }
 
         button:hover{
-        transform:scale(1.05);
-        box-shadow:0 0 15px #ff7a00;
+          background:darkorange;
         }
 
-        /* RESULT CARD */
+        #result{
+          margin-top:25px;
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:15px;
+        }
 
         .card{
-        background:rgba(255,255,255,0.05);
-        border-radius:15px;
-        padding:18px;
-        margin-top:18px;
-        backdrop-filter:blur(10px);
-        border:1px solid rgba(255,255,255,0.08);
-        transition:0.3s;
+          background:white;
+          border-radius:16px;
+          padding:15px;
+          border:1px solid #ddd;
+          box-shadow:0 5px 15px #ddd;
+          transition:0.2s;
         }
 
         .card:hover{
-        transform:translateY(-5px);
-        box-shadow:0 10px 20px rgba(0,0,0,0.5);
+          transform:scale(1.02);
         }
 
-        /* MAP BUTTON */
+        .card img{
+          width:100%;
+          height:150px;
+          object-fit:cover;
+          border-radius:10px;
+          margin-bottom:10px;
+        }
 
         .mapBtn{
-        margin-top:10px;
-        background:linear-gradient(90deg,#00c6ff,#0072ff);
-        font-size:14px;
+          margin-top:10px;
+          background:black;
+          color:white;
+          border:none;
+          padding:10px;
+          border-radius:8px;
         }
-
-        .mapBtn:hover{
-        box-shadow:0 0 12px #00aaff;
-        }
-
-        /* STARS */
 
         .star{
-        font-size:22px;
+          color:gold;
         }
-
-        .full{
-        color:#FFD700;
-        }
-
-        .empty{
-        color:#555;
-        }
-
-        .half{
-        background:linear-gradient(90deg,#FFD700 50%,#555 50%);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        }
-
-        /* BADGES */
 
         .badge1{
-        color:#FFD700;
-        font-weight:bold;
-        margin-bottom:5px;
+          color:gold;
+          font-weight:bold;
         }
 
         .badge2{
-        color:#C0C0C0;
-        font-weight:bold;
-        margin-bottom:5px;
+          color:silver;
+          font-weight:bold;
         }
 
-        /* ANIMATION */
-
-        @keyframes fadeIn{
-
-        from{
-        opacity:0;
-        transform:translateY(20px);
+        .badge3{
+          color:#cd7f32;
+          font-weight:bold;
         }
-
-        to{
-        opacity:1;
-        transform:translateY(0);
-        }
-
-        }
-
     </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-    <h2>Smart Recommendation</h2>
+    <h2>Smart Recommendation System </h2>
 
     <label>City</label>
     <select id="city"></select>
@@ -198,14 +143,9 @@
 
 </div>
 
-
 <script>
 
-    const cities=[
-    "Hail",
-    "Riyadh",
-    "Dammam"
-    ];
+    const cities=["Hail","Riyadh","Dammam"];
 
     const restaurantCategories=[
     "italian restaurant",
@@ -221,158 +161,142 @@
     ];
 
     function getStars(rating){
-
     let stars="";
-
-    const full=Math.floor(rating);
-    const half=(rating-full)>=0.5;
-    const empty=5-full-(half?1:0);
-
-    for(let i=0;i<full;i++)
-    stars+='<span class="star full">★</span>';
-
-    if(half)
-    stars+='<span class="star half">★</span>';
-
-    for(let i=0;i<empty;i++)
-    stars+='<span class="star empty">★</span>';
-
+    for(let i=0;i<Math.floor(rating);i++){
+    stars+="★";
+    }
     return stars;
+    }
 
+    function getImage(type, category){
+
+    if(type==="coffee"){
+    return "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600";
+    }
+
+    if(category.includes("italian")){
+    return "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600";
+    }
+
+    if(category.includes("japanese")){
+    return "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600";
+    }
+
+    if(category.includes("shawarma")){
+    return "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600";
+    }
+
+    if(category.includes("saudi")){
+    return "https://images.unsplash.com/photo-1543353071-10c8ba85a904?w=600";
+    }
+
+    return "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600";
     }
 
     function fillCities(){
-
     const citySelect=document.getElementById("city");
-
     cities.forEach(city=>{
-
     const option=document.createElement("option");
     option.value=city;
     option.textContent=city;
-
     citySelect.appendChild(option);
-
     });
-
     }
 
     function fillTypes(){
-
     const typeSelect=document.getElementById("type");
-
     ["restaurant","coffee"].forEach(t=>{
-
     const option=document.createElement("option");
     option.value=t;
     option.textContent=t;
-
     typeSelect.appendChild(option);
-
     });
-
     }
 
     function updateCategoryOptions(){
-
     const type=document.getElementById("type").value;
-
     const category=document.getElementById("category");
     category.innerHTML="";
 
-    const list=type==="restaurant"?restaurantCategories:coffeeCategories;
+    const list = type==="restaurant" ? restaurantCategories : coffeeCategories;
 
     list.forEach(item=>{
-
     const option=document.createElement("option");
-
     option.value=item;
     option.textContent=item;
-
     category.appendChild(option);
-
     });
-
     }
 
     function recommend(){
 
     const data={
-
-    age:0,
-    budget:0,
-    city:document.getElementById("city").value,
-    type:document.getElementById("type").value,
-    category:document.getElementById("category").value,
-    language:"en"
-
+      age:0,
+      budget:0,
+      city:document.getElementById("city").value,
+      type:document.getElementById("type").value,
+      category:document.getElementById("category").value,
+      language:"en"
     };
 
-    fetch("/recommend",{
-
+    fetch("/api/recommend",{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify(data)
-
     })
-
     .then(res=>res.json())
     .then(showResults)
-
     .catch(()=>{
-
-    document.getElementById("result").innerHTML="<div class='card'>Error loading data</div>";
-
+    document.getElementById("result").innerHTML="Error loading data";
     });
-
     }
 
     function showResults(data){
 
     const container=document.getElementById("result");
-
     container.innerHTML="";
 
-    const places=data.places||[];
+    const places=data.places || [];
 
     places.forEach((p,index)=>{
-
-    const name=p.name;
-    const rating=p.rating;
-    const reviews=p.reviews;
-
-    const stars=getStars(rating);
-
-    const mapLink="https://www.google.com/maps/search/"+encodeURIComponent(name);
 
     let badge="";
 
     if(index===0){
-    badge="<p class='badge1'>🏆 Top Recommendation</p>";
+    badge="<p class='badge1'>🥇 Best Match</p>";
     }
 
-    if(index===1){
-    badge="<p class='badge2'>🥈 Second Best Choice</p>";
+    else if(index===1){
+    badge="<p class='badge2'>🥈 Second Best</p>";
     }
 
-    container.innerHTML+=`
+    else if(index===2){
+    badge="<p class='badge3'>🥉 Third Best</p>";
+    }
 
+    const mapLink="https://www.google.com/maps/search/"+encodeURIComponent(p.name);
+
+    container.innerHTML += `
     <div class="card">
+
+    <img src="${getImage(
+    document.getElementById("type").value,
+    document.getElementById("category").value
+    )}" />
 
     ${badge}
 
-    <h3>${name}</h3>
+    <h3>${p.name}</h3>
 
-    <p style="font-size:20px">
-    ${stars} (${rating} • ${reviews} reviews)
-    </p>
+    <p class="star">${getStars(p.rating)}</p>
+
+    <p>⭐ ${p.rating} • ${p.reviews} reviews</p>
 
     <a href="${mapLink}" target="_blank">
     <button class="mapBtn">Open in Google Maps</button>
     </a>
 
     </div>
-
     `;
 
     });
@@ -387,4 +311,3 @@
 
 </body>
 </html>
-```
