@@ -1,9 +1,9 @@
-#  Smart Recommendation System
+# Smart Recommendation System
 
-🚀 **Live Demo:**  
+🚀 **Live Demo:**
 https://smart-recommendation-system-bfau.onrender.com
 
-📂 **GitHub Repository:**  
+📂 **GitHub Repository:**
 https://github.com/Ziyad28/smart-recommendation-system
 
 ---
@@ -24,24 +24,24 @@ An AI-based recommendation system that suggests the best **restaurants** and **c
 
 ## 🚀 Features
 
-- Restaurant recommendations  
-- Coffee shop recommendations  
-- Smart ranking system (based on rating and reviews)  
-- Top 3 recommendations (Best Match 🥇, Second 🥈, Third 🥉)  
-- Google Maps integration  
-- REST API built with Spring Boot  
-- Clean and modern user interface  
+* Restaurant recommendations
+* Coffee shop recommendations
+* Smart ranking system (based on rating and reviews)
+* Top 3 recommendations (Best Match 🥇, Second 🥈, Third 🥉)
+* Google Maps-based data
+* REST API built with Spring Boot
+* Clean and modern user interface
 
 ---
 
 ## 🛠 Technologies
 
-- Java  
-- Spring Boot  
-- REST API  
-- HTML  
-- CSS  
-- JavaScript  
+* Java
+* Spring Boot
+* REST API
+* HTML
+* CSS
+* JavaScript
 
 ---
 
@@ -52,32 +52,53 @@ The system calculates a score for each place using:
 ```java
 score = rating + Math.min(reviews / 1000.0, 1);
 ```
+
 This approach balances between:
 
-⭐ High rating (quality)
-📈 High number of reviews (popularity)
-🌍 Supported Categories
-Italian Restaurants
-American Restaurants
-Japanese Restaurants
-Saudi Restaurants
-Shawarma Restaurants
-Specialty Coffee
-Coffee Roasteries
-📍 Supported Cities
-Hail
-Riyadh
-Dammam
-🔗 API Example
-Request
+* ⭐ High rating (quality)
+* 📈 High number of reviews (popularity)
+
+---
+
+## 🌍 Supported Categories
+
+* Italian Restaurants
+* American Restaurants
+* Japanese Restaurants
+* Saudi Restaurants
+* Shawarma Restaurants
+* Specialty Coffee
+* Coffee Roasteries
+
+---
+
+## 📍 Supported Cities
+
+* Hail
+* Riyadh
+* Dammam
+
+---
+
+## 🔗 API Example
+
+### Request
+
 POST /api/recommend
-Body
+
+Body:
+
+```json
 {
   "city": "Riyadh",
   "type": "coffee",
   "category": "specialty coffee"
 }
-Response
+```
+
+### Response (200 OK)
+
+```json
 {
   "places": [
     {
@@ -87,7 +108,11 @@ Response
     }
   ]
 }
-👨‍💻 Author
+```
+
+---
+
+## 👨‍💻 Author
 
 Ziyad Alghadhban
 Software Engineering Student
