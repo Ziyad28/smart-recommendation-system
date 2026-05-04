@@ -1,112 +1,89 @@
-# Smart Recommendation System
+# 🚀 Smart Recommendation System
 
-🚀 **Live Demo:**
+🔗 **Live Demo:**  
 https://smart-recommendation-system-bfau.onrender.com
 
-📂 **GitHub Repository:**
+📂 **GitHub Repository:**  
 https://github.com/Ziyad28/smart-recommendation-system
 
 ---
 
 ## 📸 Preview
 
-![Smart Recommendation](preview2.png)
-
-Modern web interface that provides smart restaurant and coffee shop recommendations.
+![Preview](preview.png)
 
 ---
 
 ## 🧠 About the Project
 
-An AI-based recommendation system that suggests the best **restaurants** and **coffee shops** based on ratings and number of reviews.
+A data-driven web application that recommends the best restaurants and coffee shops based on ratings and number of reviews.
+
+The application is deployed and accessible online.
 
 ---
 
 ## 🚀 Features
 
-* Restaurant recommendations
-* Coffee shop recommendations
-* Smart ranking system (based on rating and reviews)
-* Top 3 recommendations (Best Match 🥇, Second 🥈, Third 🥉)
-* Google Maps-based data
-* REST API built with Spring Boot
-* Clean and modern user interface
+- 🔍 Smart recommendation system based on rating and reviews
+- 🍕 Restaurants & ☕ Coffee shops support
+- 🥇 Top 3 ranked results (Best Match, Second, Third)
+- 🗺️ Google Maps search links for each place
+- 🎨 Modern UI (Glass effect + background image)
+- 🌐 Live deployed application
 
 ---
 
-## 🛠 Technologies
+## 🌍 Supported Cities
 
-* Java
-* Spring Boot
-* REST API
-* HTML
-* CSS
-* JavaScript
+- Hail
+- Riyadh
+- Dammam
+
+---
+
+## 🛠 Technologies Used
+
+- Java
+- Spring Boot
+- REST API
+- HTML
+- CSS
+- JavaScript
 
 ---
 
 ## 📊 How It Works
 
-The system calculates a score for each place using:
-
 ```java
-score = rating + Math.min(reviews / 1000.0, 1);
+score = rating + min(reviews / 1000, 1);
 ```
 
-This approach balances between:
+This formula balances:
 
-* ⭐ High rating (quality)
-* 📈 High number of reviews (popularity)
-
----
-
-## 🌍 Supported Categories
-
-* Italian Restaurants
-* American Restaurants
-* Japanese Restaurants
-* Saudi Restaurants
-* Shawarma Restaurants
-* Specialty Coffee
-* Coffee Roasteries
+- ⭐ Quality (rating)
+- 📈 Popularity (number of reviews)
 
 ---
 
-## 📍 Supported Cities
+## ⚙️ System Design
 
-* Hail
-* Riyadh
-* Dammam
+- Backend: Spring Boot REST API
+- Frontend: HTML / CSS / JavaScript
+- Architecture: Stateless API
 
 ---
 
-## 🔗 API Example
+## 📌 API
 
-### Request
+**POST /recommend**
 
-POST /api/recommend
-
-Body:
+Example request:
 
 ```json
 {
   "city": "Riyadh",
-  "type": "coffee",
-  "category": "specialty coffee"
-}
-```
-
-### Response (200 OK)
-
-```json
-{
-  "places": [
-    {
-      "name": "Brew92",
-      "rating": 4.0,
-      "reviews": 3303
-    }
-  ]
+  "type": "restaurant",
+  "category": "Italian"
 }
 ```
 
@@ -114,5 +91,10 @@ Body:
 
 ## 👨‍💻 Author
 
-Ziyad Alghadhban
-Software Engineering Student
+**Ziyad Alghadban**  
+📧 Email: lzyad717@gmail.com  
+🔗 Portfolio: https://ziyad28.github.io/
+
+---
+
+⭐ If you like the project, give it a star!
