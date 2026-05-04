@@ -17,12 +17,8 @@ public class RecommendationController {
     @PostMapping({"/recommend","/api/recommend"})
     public Map<String,Object> recommend(@RequestBody RecommendRequest request){
         return recommendationService.getRecommendation(
-                request.getAge(),
-                request.getBudget(),
-                request.getType(),
-                request.getCategory(),
                 request.getCity(),
-                request.getLanguage()
+                request.getType(),
+                request.getCategory()
         );
-    }
-}
+    } }
