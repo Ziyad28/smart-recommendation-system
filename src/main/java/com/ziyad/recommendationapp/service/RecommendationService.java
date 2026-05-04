@@ -1,28 +1,16 @@
 package com.ziyad.recommendationapp.service;
 
+import com.ziyad.recommendationapp.model.Place;
 import org.springframework.stereotype.Service;
+
 import java.util.*;
 
 @Service
 public class RecommendationService {
 
-    static class Place {
-        String name;
-        double rating;
-        int reviews;
-
-        Place(String name, double rating, int reviews) {
-            this.name = name;
-            this.rating = rating;
-            this.reviews = reviews;
-        }
-    }
-
-    public Map<String, Object> getRecommendation(int age, int budget, String type, String category, String city, String language) {
+    public Map<String, Object> getRecommendation(String city, String type, String category) {
 
         Map<String, List<Place>> data = new HashMap<>();
-
-        // ================= HAIL =================
 
         data.put("Hail_specialty coffee", Arrays.asList(
                 new Place("NAF", 4.5, 1011),
@@ -34,7 +22,8 @@ public class RecommendationService {
 
         data.put("Hail_roastery coffee", Arrays.asList(
                 new Place("Geisha Roastery", 4.3, 1590),
-                new Place("Camel Step", 4.3, 604),               new Place("Alton Coffee", 4.4, 1079),
+                new Place("Camel Step", 4.3, 604),
+                new Place("Alton Coffee", 4.4, 1079),
                 new Place("Peacock Coffee", 4.4, 1593),
                 new Place("Al Andalus Roastery", 4.1, 210)
         ));
@@ -72,14 +61,12 @@ public class RecommendationService {
         ));
 
         data.put("Hail_shawarma restaurant", Arrays.asList(
-                new Place("Shawrmanatak", 4.8, 1683),
-                new Place("Ninety Flavor", 4.3, 201),
+                new Place("Shawrmanatak", 4.8, 1683, "Shawrmanatak Hail", "https://maps.app.goo.gl/M7faPLgvznKhQz3j7"),
+                new Place("Ninety Flavor", 4.3, 201, "Ninety Flavor Hail", "https://maps.app.goo.gl/FDxv1somPvzUrGX29"),
                 new Place("Lasat Felfela", 4.4, 1286),
                 new Place("Shawarma Samel", 4.5, 143),
                 new Place("Shawarma Moalem", 4.4, 614)
         ));
-
-        // ================= RIYADH =================
 
         data.put("Riyadh_specialty coffee", Arrays.asList(
                 new Place("Brew92", 4.0, 3303),
@@ -91,9 +78,9 @@ public class RecommendationService {
 
         data.put("Riyadh_roastery coffee", Arrays.asList(
                 new Place("Sulalat Coffee", 4.3, 5690),
-                new Place("Origin Roastery", 3.7, 1735),
+                new Place("ORIGIN COFFEE ROASTERS", 3.7, 1735, "ORIGIN COFFEE ROASTERS Riyadh", null),
                 new Place("Hjeen Roastery", 4.5, 3208),
-                new Place("Bayt Al Tahmees", 4.4, 2049),
+                new Place("Roasting House", 4.4, 2049, "Roasting House Riyadh", null),
                 new Place("Breehant Roastery", 4.5, 7678)
         ));
 
@@ -102,7 +89,7 @@ public class RecommendationService {
                 new Place("Steak House", 4.3, 14764),
                 new Place("Prime Cut", 4.6, 11294),
                 new Place("California Burger", 4.6, 22800),
-                new Place("7 Adlaa", 4.3, 7847)
+                new Place("7Ribs", 4.3, 7847, "7Ribs Riyadh", null)
         ));
 
         data.put("Riyadh_italian restaurant", Arrays.asList(
@@ -136,8 +123,6 @@ public class RecommendationService {
                 new Place("Shawarma Rayeg", 4.1, 3209),
                 new Place("Shawarma Ayed", 4.4, 5163)
         ));
-
-        // ================= DAMMAM =================
 
         data.put("Dammam_specialty coffee", Arrays.asList(
                 new Place("Juz Coffee", 4.8, 2060),
@@ -197,11 +182,11 @@ public class RecommendationService {
 
         String key = city + "_" + category;
 
-        List<Place> places = data.getOrDefault(key, new ArrayList<>());
+        List<Place> places = new ArrayList<>(data.getOrDefault(key, new ArrayList<>()));
 
         places.sort((a, b) -> {
-            double scoreA = a.rating + Math.min(a.reviews / 1000.0, 1.0);
-            double scoreB = b.rating + Math.min(b.reviews / 1000.0, 1.0);
+            double scoreA = a.getRating() + Math.min(a.getReviews() / 1000.0, 1.0);
+            double scoreB = b.getRating() + Math.min(b.getReviews() / 1000.0, 1.0);
             return Double.compare(scoreB, scoreA);
         });
 
@@ -209,9 +194,11 @@ public class RecommendationService {
 
         for (Place p : places) {
             Map<String, Object> item = new HashMap<>();
-            item.put("name", p.name);
-            item.put("rating", p.rating);
-            item.put("reviews", p.reviews);
+            item.put("name", p.getName());
+            item.put("rating", p.getRating());
+            item.put("reviews", p.getReviews());
+            item.put("searchName", p.getSearchName());
+            item.put("mapUrl", p.getMapUrl());
             resultPlaces.add(item);
         }
 
